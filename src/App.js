@@ -1,11 +1,16 @@
 import React from 'react';
-import LoanForm from './components/LoanForm';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import LoanFormPage from './components/LoanFormPage';
+import EligibleLoansPage from './components/EligibleLoans';
 
 function App() {
   return (
-    <div>
-      <LoanForm />
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<LoanFormPage />} />
+        <Route path="/eligible-loans" element={<EligibleLoansPage />} />
+      </Routes>
+    </Router>
   );
 }
 
